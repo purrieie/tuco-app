@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Troopod × Tuco Kids | Mobile App Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0B0D; --bg2:#131318; --bg3:#1B1B22;
+    --accent:#8B6BF7; --accent2:#7B5CF5; --accent-lt:#B49CFB;
+    --accent-dim:rgba(139,107,247,0.09); --accent-border:rgba(139,107,247,0.28); --accent-glow:rgba(139,107,247,0.25);
+    --green:#4FD18B; --amber:#E8A23D; --red:#E5645A;
+    --green-dim:rgba(79,209,139,0.12); --amber-dim:rgba(232,162,61,0.12); --red-dim:rgba(229,100,90,0.12);
+    --text:#F4F4F6; --text2:#9C9CAC; --text3:#56565F;
+    --border:rgba(255,255,255,0.06); --border2:rgba(255,255,255,0.1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;position:relative;}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(900px 600px at 90% -8%,rgba(139,107,247,0.14),transparent 60%);}
+  .topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:13px 40px;background:rgba(11,11,13,0.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+  .tb-l{display:flex;align-items:center;gap:11px;}
+  .logo-ic{width:28px;height:28px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;box-shadow:0 0 20px var(--accent-glow);}
+  .tb-t{font-size:14px;font-weight:600;letter-spacing:-0.2px;}
+  .tb-t span{color:var(--text3);font-weight:400;}
+  .tb-r{font-size:11.5px;color:var(--text3);font-family:'DM Mono',monospace;}
+  .wrap{max-width:880px;margin:0 auto;padding:54px 40px 90px;position:relative;z-index:1;zoom:1.1;}
+
+  .eyebrow{font-size:11px;color:var(--accent);letter-spacing:1.6px;text-transform:uppercase;font-family:'DM Mono',monospace;margin-bottom:14px;}
+  h1{font-size:38px;font-weight:600;letter-spacing:-1px;line-height:1.12;margin-bottom:14px;}
+  h1 em{font-style:normal;background:linear-gradient(120deg,var(--accent-lt),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .meta-strip{display:flex;flex-wrap:wrap;gap:26px;margin:24px 0 6px;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .ms .ms-l{font-size:10.5px;color:var(--text3);font-family:'DM Mono',monospace;letter-spacing:.5px;text-transform:uppercase;}
+  .ms .ms-v{font-size:14px;color:var(--text);margin-top:3px;font-weight:500;}
+
+  h2{font-size:13px;color:var(--text3);letter-spacing:1.3px;text-transform:uppercase;font-family:'DM Mono',monospace;margin:50px 0 18px;display:flex;align-items:center;gap:10px;}
+  h2::after{content:"";flex:1;height:1px;background:var(--border);}
+  p.body{font-size:15px;color:var(--text2);line-height:1.78;margin-bottom:14px;max-width:720px;}
+  p.body b{color:var(--text);font-weight:600;}
+  .def{color:var(--text3);font-size:.92em;}
+
+  .heads{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0;}
+  .head{padding:18px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,0.012);}
+  .head .h-n{font-size:26px;font-weight:600;letter-spacing:-0.8px;}
+  .head .h-n.green{color:var(--green);} .head .h-n.acc{color:var(--accent-lt);}
+  .head .h-l{font-size:12px;color:var(--text3);margin-top:5px;line-height:1.45;}
+
+  .caveat{border-radius:14px;border:1px solid var(--accent-border);background:rgba(139,107,247,0.05);padding:20px 22px;}
+  .caveat .c-h{font-size:10.5px;font-family:'DM Mono',monospace;color:var(--accent);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:12px;}
+  .caveat p{font-size:13.5px;color:var(--text2);line-height:1.7;margin-bottom:10px;} .caveat p:last-child{margin-bottom:0;} .caveat b{color:var(--text);}
+
+  .note{margin-top:16px;padding:14px 16px;border-radius:10px;border-left:2px solid var(--accent);background:rgba(255,255,255,0.012);font-size:12.5px;color:var(--text2);line-height:1.6;}
+  .note b{color:var(--text);}
+
+  .foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--text3);}
+  .foot b{color:var(--text2);} .foot a{color:var(--accent-lt);text-decoration:none;}
+
+  .approach{display:grid;grid-template-columns:1fr 44px 1fr;gap:0;align-items:stretch;margin-top:4px;}
+  .approach.four{grid-template-columns:1fr 32px 1fr 32px 1fr 32px 1fr;}
+  .a-card{border:1px solid var(--accent-border);padding:24px;border-radius:16px;background:linear-gradient(160deg,rgba(139,107,247,0.07),rgba(139,107,247,0.015));display:flex;flex-direction:column;transition:box-shadow .25s ease,transform .25s ease,background .25s ease;}
+  .a-card:hover{box-shadow:0 0 56px -20px var(--accent-glow);transform:translateY(-2px);background:linear-gradient(160deg,rgba(139,107,247,0.12),rgba(139,107,247,0.03));}
+  .a-card .a-tag{font-size:10px;font-family:'DM Mono',monospace;color:var(--accent-lt);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:14px;}
+  .a-card .a-top{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  .a-card .a-n{width:36px;height:36px;flex:none;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:14px;font-weight:600;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent-lt);}
+  .a-card h4{font-size:16px;font-weight:600;line-height:1.3;}
+  .a-card p{font-size:13px;color:var(--text3);line-height:1.65;margin-top:auto;padding-top:10px;}
+  .a-card.muted{border-color:var(--border);background:rgba(255,255,255,0.012);}
+  .approach.four .a-card{padding:18px;}
+  .approach.four .a-card h4{font-size:14px;}
+  .approach.four .a-card p{font-size:12.5px;margin-top:0;padding-top:4px;}
+  .approach.four .a-top{align-items:flex-start;min-height:44px;}
+  .a-arrow{display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:20px;}
+
+  .steps{display:flex;flex-direction:column;gap:12px;margin-top:6px;}
+  .step{display:flex;gap:18px;align-items:flex-start;border:1px solid var(--border);border-radius:14px;padding:20px 22px;background:rgba(255,255,255,0.012);}
+  .step-n{width:36px;height:36px;flex:none;border-radius:10px;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent-lt);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:14px;font-weight:600;}
+  .step-body h4{font-size:14.5px;font-weight:600;margin-bottom:5px;}
+  .step-body p{font-size:13px;color:var(--text2);line-height:1.65;max-width:620px;}
+
+  .terms{border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,0.012);padding:24px 26px;margin-top:16px;}
+  .terms .t-h{font-size:10.5px;font-family:'DM Mono',monospace;color:var(--text3);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:16px;}
+  .terms ol{list-style:none;counter-reset:term;display:flex;flex-direction:column;gap:13px;}
+  .terms li{counter-increment:term;font-size:13px;color:var(--text2);line-height:1.65;padding-left:28px;position:relative;}
+  .terms li::before{content:counter(term);position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:5px;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent-lt);font-size:10px;font-family:'DM Mono',monospace;display:flex;align-items:center;justify-content:center;}
+  .terms li b{color:var(--text);}
+
+  /* ---- Added for this proposal ---- */
+
+  /* Phone diagram */
+  .diagram{display:grid;grid-template-columns:1fr 250px 1fr;gap:22px;align-items:center;margin-top:8px;}
+  .callouts{display:flex;flex-direction:column;gap:10px;}
+  .callouts .c-title{font-size:10.5px;font-family:'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+  .callouts.shell .c-title{color:var(--accent-lt);}
+  .callouts.site .c-title{color:var(--green);}
+  .co{border:1px solid var(--border);border-radius:12px;padding:11px 13px;background:rgba(255,255,255,0.012);}
+  .callouts.shell .co{border-color:var(--accent-border);background:var(--accent-dim);}
+  .callouts.site .co{border-color:rgba(79,209,139,0.25);background:var(--green-dim);}
+  .co b{display:block;font-size:13px;font-weight:600;}
+  .co span{display:block;font-size:12px;color:var(--text2);line-height:1.45;margin-top:2px;}
+  .callouts.shell{text-align:right;}
+
+  .phone{width:250px;margin:0 auto;border-radius:36px;padding:10px;background:#1B1B22;border:1px solid var(--border2);box-shadow:0 30px 80px -30px var(--accent-glow);position:relative;}
+  .screen{border-radius:28px;overflow:hidden;background:#FFF8F0;display:flex;flex-direction:column;height:470px;position:relative;}
+  .notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:80px;height:20px;border-radius:12px;background:#0B0B0D;z-index:3;}
+  .push{position:absolute;top:36px;left:10px;right:10px;z-index:4;background:rgba(27,27,34,0.94);border:1.5px solid var(--accent);border-radius:14px;padding:8px 10px;display:flex;gap:8px;align-items:center;box-shadow:0 10px 24px rgba(0,0,0,.35);}
+  .push i{width:22px;height:22px;flex:none;border-radius:6px;background:linear-gradient(135deg,#F7A33B,#E5645A);display:grid;place-items:center;font-style:normal;font-size:10px;font-weight:700;color:#fff;}
+  .push div{font-size:10px;line-height:1.3;color:#F4F4F6;}
+  .push div b{display:block;font-size:10.5px;}
+  .web{flex:1;margin:96px 8px 0;border:1.5px dashed #4FD18B;border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:7px;position:relative;}
+  .web-tag{position:absolute;top:-9px;left:10px;background:#4FD18B;color:#0B0B0D;font-size:8.5px;font-family:'DM Mono',monospace;font-weight:600;padding:1px 6px;border-radius:4px;letter-spacing:.3px;}
+  .w-head{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:700;color:#3A2A1A;}
+  .w-head span{font-size:9px;font-weight:500;color:#8A7A6A;}
+  .w-hero{border-radius:8px;height:62px;background:linear-gradient(120deg,#FFD9A8,#FFC2B4);display:flex;align-items:flex-end;padding:7px;font-size:10px;font-weight:600;color:#3A2A1A;}
+  .w-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+  .w-card{border-radius:8px;background:#fff;border:1px solid #F0E4D6;padding:5px;}
+  .w-img{height:44px;border-radius:5px;background:#FBEBDD;}
+  .w-card p{font-size:8.5px;color:#3A2A1A;margin-top:4px;line-height:1.25;font-weight:600;}
+  .w-card small{display:block;font-size:8px;color:#E8A23D;}
+  .w-buy{border-radius:7px;background:#3A2A1A;color:#fff;font-size:9px;font-weight:600;text-align:center;padding:6px;}
+  .tabbar{margin:8px 0 0;border-top:2px solid var(--accent);background:#1B1B22;display:grid;grid-template-columns:repeat(5,1fr);padding:7px 2px 12px;position:relative;}
+  .tabbar span{font-size:8px;color:#9C9CAC;text-align:center;font-family:'DM Mono',monospace;}
+  .tabbar span::before{content:"";display:block;width:12px;height:12px;border-radius:4px;margin:0 auto 3px;background:#56565F;}
+  .tabbar span.on{color:var(--accent-lt);} .tabbar span.on::before{background:var(--accent);}
+  .shell-tag{position:absolute;top:-10px;left:10px;background:var(--accent);color:#fff;font-size:8.5px;font-family:'DM Mono',monospace;font-weight:600;padding:1px 6px;border-radius:4px;letter-spacing:.3px;}
+
+  /* Ticks matrix */
+  .matrix{border-radius:14px;border:1px solid var(--border);overflow:hidden;}
+  .mx-row{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;border-bottom:1px solid var(--border);}
+  .mx-row:last-child{border-bottom:none;}
+  .mx-row > div{padding:12px 16px;font-size:13px;display:flex;align-items:center;gap:8px;}
+  .mx-row.hd{background:var(--bg3);}
+  .mx-row.hd > div{font-size:10.5px;color:var(--text3);font-family:'DM Mono',monospace;letter-spacing:.5px;text-transform:uppercase;}
+  .mx-row > div.lbl{color:var(--text2);}
+  .mx-row > .pick{background:var(--accent-dim);}
+  .mx-row.hd > .pick{color:var(--accent-lt);}
+  .yes{color:var(--green);font-weight:600;} .no{color:var(--red);font-weight:600;} .mid{color:var(--amber);font-weight:600;}
+  .mx-row small{display:block;color:var(--text3);font-size:11px;font-weight:400;}
+
+  /* Shell features */
+  .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .f-card{border:1px solid var(--border);border-radius:14px;padding:16px 18px;background:rgba(255,255,255,0.012);}
+  .f-card h4{font-size:14px;font-weight:600;margin-bottom:4px;}
+  .f-card p{font-size:12.5px;color:var(--text2);line-height:1.55;}
+
+  /* Apps */
+  .chip{display:inline-block;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:5px;letter-spacing:.4px;text-transform:uppercase;white-space:nowrap;}
+  .chip.ok{background:var(--green-dim);color:var(--green);border:1px solid rgba(79,209,139,0.3);}
+  .chip.fix{background:var(--amber-dim);color:var(--amber);border:1px solid rgba(232,162,61,0.3);}
+  .app-group{border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,0.012);padding:18px 20px;margin-bottom:12px;}
+  .ag-h{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+  .ag-h h4{font-size:15px;font-weight:600;}
+  .ag-h span{font-size:12px;color:var(--text3);}
+  .apps-ok{display:grid;grid-template-columns:repeat(2,1fr);gap:0 24px;}
+  .ao{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--border);font-size:13px;}
+  .ao b{font-weight:600;}
+  .ao span{color:var(--text3);font-size:12px;text-align:right;}
+  .fixrow{display:grid;grid-template-columns:160px 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--border);}
+  .fixrow b{font-size:13.5px;font-weight:600;display:block;}
+  .fixrow .job{font-size:12px;color:var(--text3);}
+  .fixrow p{font-size:13px;color:var(--text2);line-height:1.6;}
+  .fixrow p em{font-style:normal;color:var(--text);font-weight:600;}
+
+  /* Pros / cons */
+  .pros{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+  .pro{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--border);border-radius:12px;padding:12px 14px;background:rgba(255,255,255,0.012);font-size:13px;color:var(--text2);}
+  .pro::before{content:"✓";color:var(--green);font-weight:700;}
+  .pro b{color:var(--text);font-weight:600;}
+  .cons{border-radius:14px;border:1px solid var(--border);overflow:hidden;margin-top:12px;}
+  .cn-row{display:grid;grid-template-columns:1fr 32px 1.25fr;border-bottom:1px solid var(--border);align-items:stretch;}
+  .cn-row:last-child{border-bottom:none;}
+  .cn-row.hd{background:var(--bg3);}
+  .cn-row.hd > div{font-size:10.5px;color:var(--text3);font-family:'DM Mono',monospace;letter-spacing:.5px;text-transform:uppercase;padding:11px 16px;}
+  .cn-row > div{padding:13px 16px;font-size:13px;line-height:1.55;}
+  .cn-row .con{color:var(--text);}
+  .cn-row .con span{display:block;color:var(--text3);font-size:12px;margin-top:2px;}
+  .cn-row .arr{color:var(--accent);display:flex;align-items:center;justify-content:center;padding:0;}
+  .cn-row .fix{color:var(--text2);background:rgba(79,209,139,0.03);}
+
+  @media(max-width:820px){
+    .wrap{padding:36px 20px 70px;} .topbar{padding:13px 20px;} h1{font-size:28px;}
+    .heads,.feat{grid-template-columns:1fr;}
+    .approach,.approach.four{grid-template-columns:1fr;gap:14px;}
+    .a-arrow{transform:rotate(90deg);padding:2px 0;}
+    .step{padding:16px 18px;gap:14px;}
+    .diagram{grid-template-columns:1fr;}
+    .callouts.shell{text-align:left;order:2;}
+    .phone{order:1;}
+    .callouts.site{order:3;}
+    .apps-ok,.pros{grid-template-columns:1fr;}
+    .mx-row{grid-template-columns:1.2fr 1fr 1fr 1fr;}
+    .mx-row > div{padding:10px 10px;font-size:12px;}
+  }
+  @media(max-width:480px){
+    .wrap{zoom:1;padding:28px 16px 60px;}
+    .topbar{padding:11px 16px;}
+    .tb-t{font-size:13px;} .tb-t span{display:none;}
+    .tb-r{font-size:10px;}
+    h1{font-size:24px;}
+    .meta-strip{gap:16px 22px;}
+    .foot{flex-direction:column;gap:6px;}
+    .fixrow{grid-template-columns:1fr;gap:6px;}
+    .cn-row{grid-template-columns:1fr;}
+    .cn-row .arr{display:none;}
+    .cn-row.hd{display:none;}
+    .cn-row .fix{padding-top:0;}
+    .cn-row .fix::before{content:"How we handle it: ";color:var(--green);font-weight:600;}
+    .mx-row > div{padding:9px 7px;font-size:11.5px;}
+    .mx-row.hd > div{font-size:9px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .a-card{transition:none;} .a-card:hover{transform:none;}
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="tb-l"><div class="logo-ic">T</div><div class="tb-t">Troopod <span>× Tuco Kids</span></div></div>
+    <div class="tb-r">Mobile App</div>
+  </div>
+
+  <div class="wrap">
+    <div class="eyebrow">Mobile App · Proposal</div>
+    <h1>Your Shopify store, live on the <em>Play Store and App Store</em></h1>
+    <p class="body">We turn tucokids.com into a real app that parents download from the app stores. Inside, they see exactly the store they already know: the same products, quiz, reviews, rewards, videos and GoKwik checkout. Nothing on your Shopify setup changes, and your team keeps working exactly as it does today.</p>
+
+    <div class="meta-strip">
+      <div class="ms"><div class="ms-l">Store</div><div class="ms-v">tucokids.com</div></div>
+      <div class="ms"><div class="ms-l">Platform</div><div class="ms-v">Shopify</div></div>
+      <div class="ms"><div class="ms-l">Approach</div><div class="ms-v">Wrapper app, phase 1</div></div>
+      <div class="ms"><div class="ms-l">Date</div><div class="ms-v">2 Nov 2026</div></div>
+    </div>
+
+    <h2>What we're building</h2>
+    <p class="body">A <b>wrapper app</b> is a real app whose screens are your live website. Around the website sits a <b>shell</b> <span class="def">(the app's outer frame: icon, bottom buttons and notifications)</span>. Think of a TV showing a channel: we build the TV once, and the channel, tucokids.com, keeps updating on its own.</p>
+
+    <div class="diagram">
+      <div class="callouts shell">
+        <div class="c-title">The shell · built by Troopod</div>
+        <div class="co"><b>Notifications</b><span>Order updates, back in stock, offers</span></div>
+        <div class="co"><b>Bottom tab bar</b><span>Home, Shop, Cart, Account, Track order</span></div>
+        <div class="co"><b>Opening and offline screens</b><span>Branded launch screen, friendly message if internet drops</span></div>
+        <div class="co"><b>Smart links</b><span>A WhatsApp or notification link opens the right product inside the app</span></div>
+      </div>
+
+      <div class="phone" aria-label="Diagram of the Tuco Kids app: shell around the live website">
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="push"><i>TK</i><div><b>Tuco Kids</b>Your order is out for delivery</div></div>
+          <div class="web">
+            <span class="web-tag">tucokids.com · live</span>
+            <div class="w-head">tuco kids <span>search · cart</span></div>
+            <div class="w-hero">Find your pick: take the quiz</div>
+            <div class="w-row">
+              <div class="w-card"><div class="w-img"></div><p>2-in-1 Sunscreen SPF 50</p><small>★★★★★ reviews</small></div>
+              <div class="w-card"><div class="w-img"></div><p>3-in-1 Oat Kit</p><small>★★★★★ reviews</small></div>
+            </div>
+            <div class="w-buy">Buy now · GoKwik checkout</div>
+          </div>
+          <div class="tabbar">
+            <span class="shell-tag">shell</span>
+            <span class="on">Home</span><span>Shop</span><span>Cart</span><span>Account</span><span>Track</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callouts site">
+        <div class="c-title">Your website · unchanged</div>
+        <div class="co"><b>Every page and section</b><span>Theme, quiz, combos, mums' reviews, blogs</span></div>
+        <div class="co"><b>All your apps</b><span>Judge.me, Nector, Whatmore, Searchanise and more</span></div>
+        <div class="co"><b>Same checkout and login</b><span>GoKwik and KwikPass, exactly as today</span></div>
+        <div class="co"><b>Edits show instantly</b><span>Change it in Shopify, it's in the app. No app update.</span></div>
+      </div>
+    </div>
+
+    <h2>Why a wrapper app first</h2>
+    <p class="body">There are three ways to give Tuco an app. The wrapper is the only one that puts you on both app stores <b>and</b> keeps your store exactly as it is.</p>
+
+    <div class="matrix">
+      <div class="mx-row hd"><div></div><div>Installable website</div><div class="pick">Wrapper app</div><div>Native rebuild</div></div>
+      <div class="mx-row"><div class="lbl">On Play Store and App Store</div><div class="no">✕</div><div class="pick yes">✓</div><div class="yes">✓</div></div>
+      <div class="mx-row"><div class="lbl">Exact copy of your store, all apps included</div><div class="yes">✓</div><div class="pick yes">✓</div><div class="no">✕ <small>rebuilt, some apps missing</small></div></div>
+      <div class="mx-row"><div class="lbl">Notifications on iPhone and Android</div><div class="mid">Android only</div><div class="pick yes">✓</div><div class="yes">✓</div></div>
+      <div class="mx-row"><div class="lbl">Website edits show up without an app update</div><div class="yes">✓</div><div class="pick yes">✓</div><div class="no">✕ <small>redo in the app</small></div></div>
+      <div class="mx-row"><div class="lbl">Speed</div><div class="mid">Same as website</div><div class="pick mid">Same as website</div><div class="yes">Faster</div></div>
+    </div>
+
+    <div class="heads" style="margin-top:14px">
+      <div class="head"><div class="h-n green">23 of 23</div><div class="h-l">Customer-facing apps on your store that keep working in the app</div></div>
+      <div class="head"><div class="h-n acc">0</div><div class="h-l">Changes to your Shopify theme, apps or team workflow</div></div>
+      <div class="head"><div class="h-n acc">2 stores</div><div class="h-l">Google Play and Apple App Store, from one build</div></div>
+    </div>
+
+    <h2>How parents get the app</h2>
+    <div class="approach four">
+      <div class="a-card"><div class="a-top"><div class="a-n">01</div><h4>They hear about it</h4></div><p>Site banner, WhatsApp, order emails or a QR code on the pack.</p></div>
+      <div class="a-arrow">→</div>
+      <div class="a-card"><div class="a-top"><div class="a-n">02</div><h4>They search "Tuco Kids"</h4></div><p>On Google Play or the App Store, or straight from a link.</p></div>
+      <div class="a-arrow">→</div>
+      <div class="a-card"><div class="a-top"><div class="a-n">03</div><h4>They tap Install</h4></div><p>Like any other app. The Tuco icon lands on the home screen.</p></div>
+      <div class="a-arrow">→</div>
+      <div class="a-card"><div class="a-top"><div class="a-n">04</div><h4>They log in once</h4></div><p>Phone number and OTP via KwikPass, then order updates arrive.</p></div>
+    </div>
+
+    <h2>What the shell adds</h2>
+    <p class="body">Everything below is built by Troopod. Everything else in the app is your website as it is today.</p>
+    <div class="feat">
+      <div class="f-card"><h4>Bottom tab bar</h4><p>Home, Shop, Cart, Account and Track order, always one tap away, like any shopping app.</p></div>
+      <div class="f-card"><h4>Notifications</h4><p>Sent from CleverTap, the tool your team already uses. No new tool to learn.</p></div>
+      <div class="f-card"><h4>Smart links</h4><p>Links in WhatsApp, emails and notifications open the exact product inside the app.</p></div>
+      <div class="f-card"><h4>Opening screen</h4><p>A branded Tuco screen while the app starts.</p></div>
+      <div class="f-card"><h4>Offline screen</h4><p>A friendly message and retry button when the parent's internet drops.</p></div>
+      <div class="f-card"><h4>App orders tracked separately</h4><p>Google Analytics and Meta show app visits and orders apart from the website.</p></div>
+    </div>
+
+    <h2>Speed: what to expect</h2>
+    <div class="caveat">
+      <div class="c-h">Clear picture</div>
+      <p>The app shows your website, so <b>pages load as fast as tucokids.com loads on a phone today</b>. If the website is fast, the app is fast. If a page is slow on the website, it is slow in the app too.</p>
+      <p>What helps: the tab bar and opening screen are part of the app itself, so taps feel instant even while a page loads. Pages a parent has already visited open faster the second time. Any speed work done on the website improves the app automatically.</p>
+      <p>What we can add: your site runs many <b>scripts</b> <span class="def">(small programs your apps and trackers load on every page)</span>. With your approval, we can switch off trackers that aren't needed for app visitors, such as Contentsquare or VWO, so app pages load lighter.</p>
+    </div>
+
+    <h2>Your third-party apps in the app</h2>
+    <p class="body">We checked every app that customers see on tucokids.com, and <b>all 23 work inside the app</b>. 20 of them, including Judge.me, Nector, Whatmore, Searchanise, KwikPass and ClickPost, need nothing at all. The 3 below need a small fix that we build in before launch.</p>
+
+    <div class="app-group">
+      <div class="ag-h"><h4>Works after a small fix from us</h4><span class="chip fix">3 apps · built in before launch</span></div>
+      <div class="fixrow"><div><b>GoKwik checkout</b><span class="job">One-click checkout, COD, UPI</span></div><p>When a parent pays by UPI, the app must hand over to GPay or PhonePe and bring them back. <em>We build this handover into the app and test it with real ₹1 orders before launch.</em></p></div>
+      <div class="fixrow"><div><b>Shopflo</b><span class="job">Fast checkout</span></div><p>Same UPI handover as GoKwik. <em>Built and tested the same way.</em></p></div>
+      <div class="fixrow"><div><b>CleverTap</b><span class="job">Notifications and journeys</span></div><p>Website notifications don't reach an app. <em>We add CleverTap's app kit, so your team sends app notifications from the same CleverTap dashboard.</em></p></div>
+    </div>
+
+    <div class="note"><b>Not affected:</b> admin-only tools (such as Metafield Updates) and your catalogue channels (Facebook &amp; Instagram, Google &amp; YouTube, Pinterest) keep working as they do now. Customers never see them.</div>
+
+    <div class="caveat" style="margin-top:14px">
+      <div class="c-h">If an app ever doesn't behave inside the app</div>
+      <p><b>1. We catch it before launch.</b> Every app on this list is tested inside the app on iPhone and Android.</p>
+      <p><b>2. A safety net.</b> Any single page that misbehaves can open in a browser panel that slides up inside the app, where it works exactly like the website.</p>
+      <p><b>3. We fix it at the source.</b> We work with that app's team to fix it, with an introduction from you where needed.</p>
+      <p><b>4. Your website is never touched.</b> Nothing we do in the app can affect tucokids.com.</p>
+    </div>
+
+    <h2>Pros, and how we handle every con</h2>
+    <div class="pros">
+      <div class="pro"><span><b>Exact copy of your store.</b> Every page, section and app, as it is today.</span></div>
+      <div class="pro"><span><b>On both app stores.</b> Parents find and install it like any app.</span></div>
+      <div class="pro"><span><b>Notifications on every phone.</b> From the CleverTap dashboard you already use.</span></div>
+      <div class="pro"><span><b>Zero extra work for your team.</b> Keep editing in Shopify; the app updates itself.</span></div>
+      <div class="pro"><span><b>Lean way to start.</b> Learn how parents use an app before investing in a full rebuild.</span></div>
+      <div class="pro"><span><b>A listing that carries forward.</b> A later native version reuses the same store listing and users.</span></div>
+    </div>
+
+    <div class="cons">
+      <div class="cn-row hd"><div>Con</div><div></div><div>How we handle it</div></div>
+      <div class="cn-row"><div class="con">Speed matches the mobile website<span>The app can't be faster than the pages it shows</span></div><div class="arr">→</div><div class="fix">Native tab bar and opening screen for instant taps, lighter app pages by switching off unneeded trackers, and a native version later if speed becomes the priority.</div></div>
+      <div class="cn-row"><div class="con">Apple's review can push back once<span>Apple is strict with apps that only show a website</span></div><div class="arr">→</div><div class="fix">We include the real app features Apple looks for (tab bar, notifications, offline screen, smart links), handle the review, and resubmit if asked.</div></div>
+      <div class="cn-row"><div class="con">UPI payments need a handover<span>GPay and PhonePe open outside the app</span></div><div class="arr">→</div><div class="fix">Built in from day one and tested with real ₹1 orders on UPI, card and COD before launch.</div></div>
+      <div class="cn-row"><div class="con">Trackers may count app visits as website visits</div><div class="arr">→</div><div class="fix">Every app visit is tagged, so Google Analytics and Meta report app orders separately.</div></div>
+      <div class="cn-row"><div class="con">App store accounts are needed in Tuco's name<span>Apple's company account needs a D-U-N-S number (a free company ID)</span></div><div class="arr">→</div><div class="fix">We guide your team through both accounts and start this first, since it is the slowest step.</div></div>
+      <div class="cn-row"><div class="con">Occasional app updates<span>For new iPhone and Android versions</span></div><div class="arr">→</div><div class="fix">Troopod handles them. Website changes never need an app update.</div></div>
+    </div>
+
+    <h2>Process</h2>
+    <div class="steps">
+      <div class="step"><div class="step-n">01</div><div class="step-body"><h4>Plan and set up accounts</h4><p>Agree the tab bar, app name, icon and store screenshots, and which notifications to send. Your team opens Google Play and Apple developer accounts in Tuco's name, with our help.</p></div></div>
+      <div class="step"><div class="step-n">02</div><div class="step-body"><h4>Build the shell</h4><p>The app frame around tucokids.com: tab bar, opening and offline screens, CleverTap notifications, smart links, the UPI handover and app-order tracking.</p></div></div>
+      <div class="step"><div class="step-n">03</div><div class="step-body"><h4>Test everything</h4><p>Real ₹1 orders on UPI, card and COD. Login, rewards, reviews, videos, quiz and every app on the list. Your team tries it on their own phones through test versions of the app before anyone else sees it.</p></div></div>
+      <div class="step"><div class="step-n">04</div><div class="step-body"><h4>Submit to the stores</h4><p>Store listings, privacy policy and the stores' data forms. We handle Google and Apple review end to end.</p></div></div>
+      <div class="step"><div class="step-n">05</div><div class="step-body"><h4>Launch</h4><p>"Get the app" banner on the website, a WhatsApp and CleverTap announcement, a QR code on pack inserts, and an optional app-only first-order offer.</p></div></div>
+      <div class="step"><div class="step-n">06</div><div class="step-body"><h4>Measure</h4><p>A regular readout of installs, the app's share of orders, repeat purchase rate and notification opens.</p></div></div>
+    </div>
+
+    <div class="terms">
+      <div class="t-h">What we need from Tuco</div>
+      <ol>
+        <li><b>Developer accounts:</b> Google Play and Apple developer accounts in Tuco's name, and a D-U-N-S number for Apple if you don't have one.</li>
+        <li><b>Shopify access:</b> staff access to Checkout and Payments settings, so we can confirm the GoKwik setup.</li>
+        <li><b>Approvals:</b> app name, icon and store listing, and which trackers can be switched off for app visitors.</li>
+        <li><b>Introductions:</b> to app vendors, only if one needs a fix on their side.</li>
+        <li><b>Launch support:</b> a slot in your WhatsApp and CleverTap calendar, and a decision on an app-only offer.</li>
+      </ol>
+    </div>
+
+    <h2>What comes next</h2>
+    <div class="approach">
+      <div class="a-card">
+        <div class="a-tag">Phase 01 · Now</div>
+        <div class="a-top"><div class="a-n">01</div><h4>Wrapper app</h4></div>
+        <p>Your exact store on both app stores, with notifications. Learn how parents use the app: installs, orders, repeat buying.</p>
+      </div>
+      <div class="a-arrow">→</div>
+      <div class="a-card muted">
+        <div class="a-tag">Phase 02 · When the app proves itself</div>
+        <div class="a-top"><div class="a-n">02</div><h4>Native app</h4></div>
+        <p>Once the app brings a meaningful share of orders, we rebuild it natively (screens built as app screens, not web pages) for extra speed, using Appbrew, which is already installed on your Shopify. Same store listing, so parents simply get an update.</p>
+      </div>
+    </div>
+
+    <div class="note"><b>Commercials</b> will be shared separately.</div>
+
+    <div class="foot">
+      <div><b>Troopod</b> · mobile app for Tuco Kids · troopod.io</div>
+      <div><a href="mailto:nj@troopod.io">nj@troopod.io</a></div>
+    </div>
+  </div>
+</body>
+</html>
