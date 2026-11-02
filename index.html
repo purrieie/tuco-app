@@ -313,6 +313,86 @@
     .ph{grid-template-columns:1fr;gap:2px;}
     .ph p{margin-bottom:8px;}
   }
+
+  /* iPhone problem box */
+  .ios{border-radius:14px;border:1px solid rgba(229,100,90,0.3);background:rgba(229,100,90,0.05);padding:20px 22px;margin-top:14px;}
+  .ios .c-h{font-size:10.5px;font-family:'DM Mono',monospace;color:var(--red);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:14px;}
+  .ios-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .ios-i{display:grid;grid-template-columns:24px 1fr;gap:10px;border:1px solid var(--border);border-radius:10px;padding:12px 14px;background:rgba(255,255,255,0.015);}
+  .ios-i .n{width:24px;height:24px;border-radius:7px;background:var(--red-dim);color:var(--red);font-family:'DM Mono',monospace;font-size:12px;display:grid;place-items:center;}
+  .ios-i b{display:block;font-size:13.5px;font-weight:600;margin-bottom:2px;}
+  .ios-i p{font-size:12.5px;color:var(--text2);line-height:1.5;}
+  .ios .so{margin-top:14px;font-size:13.5px;color:var(--text2);line-height:1.6;}
+  .ios .so b{color:var(--text);}
+
+  /* Apps section */
+  .apps-ok-box{border:1px solid rgba(79,209,139,0.25);border-radius:14px;background:rgba(79,209,139,0.04);padding:18px 20px;margin-bottom:12px;}
+  .appchips{display:flex;flex-wrap:wrap;gap:6px;}
+  .appchips span{font-size:12.5px;padding:4px 10px;border-radius:7px;border:1px solid var(--border2);background:rgba(255,255,255,0.02);color:var(--text);}
+  .apps-two{display:grid;grid-template-columns:1.15fr 1fr;gap:12px;}
+  .apps-two .app-group{margin-bottom:0;}
+  .mini{display:flex;flex-direction:column;gap:0;}
+  .mini div{padding:10px 0;border-top:1px solid var(--border);font-size:13px;color:var(--text2);line-height:1.55;}
+  .mini div b{color:var(--text);font-weight:600;display:block;font-size:13.5px;}
+
+  /* Timeline */
+  .gantt{border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,0.012);padding:16px 18px;margin-bottom:12px;}
+  .g-row{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:center;padding:6px 0;}
+  .g-l{font-size:13px;color:var(--text2);}
+  .g-t{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;height:18px;}
+  .g-t i{display:block;border-radius:5px;background:linear-gradient(90deg,var(--accent2),var(--accent-lt));}
+  .g-t i.live{background:var(--green);}
+  .g-hd .g-t{height:auto;}
+  .g-hd .g-t span{font-size:10px;font-family:'DM Mono',monospace;color:var(--text3);text-transform:uppercase;letter-spacing:.4px;}
+  .g-foot{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:13px;color:var(--text2);}
+  .g-foot b{color:var(--text);}
+  .wk{display:inline-block;margin-left:8px;font-size:10px;font-family:'DM Mono',monospace;color:var(--accent-lt);background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:5px;padding:2px 7px;vertical-align:2px;font-weight:500;letter-spacing:.3px;}
+
+  /* Commercials (from template) */
+  .track{border:1px solid var(--accent-border);border-radius:16px;padding:24px;background:linear-gradient(150deg,rgba(139,107,247,0.07),rgba(139,107,247,0.015));margin-bottom:14px;}
+  .track-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:6px;flex-wrap:wrap;}
+  .track-h .t-name{font-size:16px;font-weight:600;}
+  .track-h .t-tag{font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:5px;background:var(--accent-dim);color:var(--accent-lt);border:1px solid var(--accent-border);letter-spacing:.4px;text-transform:uppercase;}
+  .track .t-scope{font-size:12.5px;color:var(--text3);margin-bottom:18px;line-height:1.6;max-width:640px;}
+  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .price-box{border:1px solid var(--border);border-radius:12px;padding:16px 18px;background:rgba(255,255,255,0.02);}
+  .price-box .p-l{font-size:10.5px;color:var(--text3);font-family:'DM Mono',monospace;letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px;}
+  .price-box .p-v{font-size:22px;font-weight:600;letter-spacing:-.5px;color:var(--accent-lt);}
+  .price-box .p-d{font-size:11.5px;color:var(--text3);margin-top:6px;line-height:1.5;}
+
+  @media(max-width:820px){
+    .apps-two{grid-template-columns:1fr;}
+    .g-row{grid-template-columns:120px 1fr;}
+  }
+  @media(max-width:480px){
+    .ios-grid,.price-grid{grid-template-columns:1fr;}
+    .g-row{grid-template-columns:96px 1fr;gap:8px;}
+    .g-l{font-size:11.5px;}
+  }
+
+  .acc-box{border-radius:14px;border:1px solid var(--amber);background:rgba(232,162,61,0.07);padding:20px 22px;margin:22px 0 8px;}
+  .acc-box .c-h{font-size:10.5px;font-family:'DM Mono',monospace;color:var(--amber);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:12px;}
+  .acc-box p{font-size:13.5px;color:var(--text2);line-height:1.65;}
+  .acc-box p b{color:var(--text);}
+  .fees{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;}
+  .fee{border:1px solid rgba(232,162,61,0.3);border-radius:12px;padding:14px 16px;background:rgba(232,162,61,0.05);}
+  .fee span{display:block;font-size:10.5px;font-family:'DM Mono',monospace;letter-spacing:.5px;text-transform:uppercase;color:var(--text3);}
+  .fee b{display:block;font-size:20px;font-weight:600;color:var(--amber);margin:4px 0;}
+  .fee small{display:block;font-size:12px;color:var(--text2);line-height:1.5;}
+  @media(max-width:480px){.fees{grid-template-columns:1fr;}}
+
+  .total{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border:1px solid var(--border);border-radius:12px;padding:14px 18px;background:rgba(255,255,255,0.02);}
+  .t-big{font-size:32px;font-weight:600;letter-spacing:-1px;line-height:1;color:var(--accent-lt);}
+  .t-sub{font-size:10.5px;color:var(--text3);font-family:'DM Mono',monospace;letter-spacing:.5px;text-transform:uppercase;margin-top:6px;}
+  .split{display:flex;align-items:center;gap:8px;}
+  .sp{border:1px solid var(--border2);border-radius:8px;padding:6px 12px;background:rgba(255,255,255,0.02);}
+  .sp span{display:block;font-size:9.5px;font-family:'DM Mono',monospace;letter-spacing:.5px;text-transform:uppercase;color:var(--text3);}
+  .sp b{display:block;font-size:14px;font-weight:600;color:var(--text);}
+  .sp small{display:none;}
+  .plus{color:var(--text3);font-size:14px;}
+  .track:has(.total){padding:18px 20px;}
+  .track:has(.total) .t-scope{margin-bottom:12px;}
+  .track:has(.total) .note{margin-top:12px;padding:10px 14px;}
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     .a-card{transition:none;} .a-card:hover{transform:none;}
@@ -340,7 +420,7 @@
     <h2>The three options</h2>
     <div class="opts">
       <div class="opt">
-        <div class="opt-top"><div><span class="tag no">Not chosen</span><h3>Installable website</h3><p class="what">A shortcut to tucokids.com on the phone's home screen. Not on the app stores.</p></div><div class="sc"><b>3.6</b><small>/ 5</small></div></div>
+        <div class="opt-top"><div><span class="tag no">Not chosen</span><h3>Web app</h3><p class="what">Your website saved as an icon on the phone's home screen. Not on the app stores.</p></div><div class="sc"><b>3.6</b><small>/ 5</small></div></div>
         <ul class="pc">
           <li class="p">Same as your website</li>
           <li class="p">Can go live in a few days</li>
@@ -349,24 +429,23 @@
           <li class="c">iPhone users have to add it manually</li>
           <li class="c">iPhone notifications only work after that</li>
         </ul>
-        <div class="verdict no"><b>Why not</b>Customers can't find it on the app stores, so very few will install it.</div>
+        <div class="verdict no"><b>Why not</b>It is not on the app stores, and on iPhone it is hard to install. See below.</div>
       </div>
 
       <div class="opt pick">
-        <div class="opt-top"><div><span class="tag yes">Recommended</span><h3>Wrapper app</h3><p class="what">An app on the app stores that loads your live website inside it.</p></div><div class="sc"><b>4.4</b><small>/ 5</small></div></div>
+        <div class="opt-top"><div><span class="tag yes">Recommended</span><h3>Wrapper app</h3><p class="what">A proper app on both stores. Your live website loads inside a shell.</p></div><div class="sc"><b>4.4</b><small>/ 5</small></div></div>
         <ul class="pc">
           <li class="p">Same as your website, all 23 apps work</li>
           <li class="p">On Play Store and App Store</li>
           <li class="p">Website changes show in the app instantly</li>
           <li class="c">Same speed as your website</li>
-          <li class="c">Apple reviews these apps strictly</li>
           <li class="c">Needs store accounts in Tuco's name</li>
         </ul>
         <div class="verdict yes"><b>Why we chose it</b>It is the only option that is on the app stores and is an exact replica. Each limitation has a fix (see Part 2).</div>
       </div>
 
       <div class="opt">
-        <div class="opt-top"><div><span class="tag later">Later</span><h3>Native rebuild</h3><p class="what">A new app built with Appbrew. It does not load your website.</p></div><div class="sc"><b>4.3</b><small>/ 5</small></div></div>
+        <div class="opt-top"><div><span class="tag later">Not now</span><h3>Native rebuild</h3><p class="what">A new app built with Appbrew. It does not load your website.</p></div><div class="sc"><b>4.3</b><small>/ 5</small></div></div>
         <ul class="pc">
           <li class="p">Fastest of the three</li>
           <li class="p">Checkout, login and notifications built in</li>
@@ -376,19 +455,30 @@
           <li class="c">Website changes must be redone in the app</li>
           <li class="c">Monthly Appbrew fee ($199 to $1,099), plus a fee on app sales</li>
         </ul>
-        <div class="verdict later"><b>Why later</b>It is not an exact replica. It makes sense later, once the app is getting orders.</div>
+        <div class="verdict later"><b>Why not now</b>It is not an exact replica and adds a monthly fee. It stays an option if you want a faster app later.</div>
       </div>
+    </div>
+
+    <div class="ios">
+      <div class="c-h">Why not a web app: the iPhone problem</div>
+      <div class="ios-grid">
+        <div class="ios-i"><span class="n">1</span><div><b>Not on the App Store or Play Store</b><p>Searching "Tuco Kids" finds nothing. No store listing, no ratings.</p></div></div>
+        <div class="ios-i"><span class="n">2</span><div><b>No install button on iPhone</b><p>Customers must tap Share, then "Add to Home Screen". Most never do.</p></div></div>
+        <div class="ios-i"><span class="n">3</span><div><b>Notifications only after that step</b><p>iPhone sends notifications only if the customer added the app by hand and allowed them.</p></div></div>
+        <div class="ios-i"><span class="n">4</span><div><b>Separate login</b><p>The home-screen version does not share Safari's login, so customers log in again.</p></div></div>
+      </div>
+      <p class="so"><b>That is why we recommend the shell.</b> It is the same website, but inside a proper app on both stores, so none of these problems apply.</p>
     </div>
 
     <h2>How they score</h2>
     <p class="body">We scored each option out of 5 on 6 factors that matter to a customer. "Everything from the website is there" has the highest weight, because that is your main requirement.</p>
     <div class="sbars">
-      <div class="sbar"><div class="lbl">Installable website</div><div class="trk"><div class="fill" style="width:72%"></div></div><div class="v">3.6</div></div>
+      <div class="sbar"><div class="lbl">Web app</div><div class="trk"><div class="fill" style="width:72%"></div></div><div class="v">3.6</div></div>
       <div class="sbar pick"><div class="lbl">Wrapper app</div><div class="trk"><div class="fill" style="width:88%"></div></div><div class="v">4.4</div></div>
       <div class="sbar"><div class="lbl">Native rebuild</div><div class="trk"><div class="fill" style="width:86%"></div></div><div class="v">4.3</div></div>
     </div>
     <div class="sgrid">
-      <div class="sg-row hd"><div>Factor</div><div class="w">Weight</div><div>Website</div><div class="pk">Wrapper</div><div>Native</div></div>
+      <div class="sg-row hd"><div>Factor</div><div class="w">Weight</div><div>Web app</div><div class="pk">Wrapper</div><div>Native</div></div>
         <div class="sg-row"><div class="lbl">Everything from the website is there</div><div class="w">25%</div><div><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="pk"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div><span class="dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div></div>
         <div class="sg-row"><div class="lbl">Checkout and login work</div><div class="w">20%</div><div><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="pk"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div><div><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div></div>
         <div class="sg-row"><div class="lbl">Speed</div><div class="w">20%</div><div><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div><div class="pk"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div><div><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div></div>
@@ -405,14 +495,14 @@
       <span><i style="background:var(--red)"></i>Not available</span>
     </div>
     <div class="abars">
-      <div class="abar"><div class="top"><b>Installable website</b><span>22 work · 1 partly</span></div><div class="stack"><i class="ok" style="width:95.65%"></i><i class="fx" style="width:4.35%"></i></div><p class="miss">Partly works: CleverTap notifications on iPhone.</p></div>
+      <div class="abar"><div class="top"><b>Web app</b><span>22 work · 1 partly</span></div><div class="stack"><i class="ok" style="width:95.65%"></i><i class="fx" style="width:4.35%"></i></div><p class="miss">Partly works: CleverTap notifications on iPhone.</p></div>
       <div class="abar"><div class="top"><b>Wrapper app</b><span>20 work · 3 after a small fix</span></div><div class="stack"><i class="ok" style="width:86.96%"></i><i class="fx" style="width:13.04%"></i></div><p class="miss">Small fix needed: GoKwik, Shopflo and CleverTap. Nothing is missing.</p></div>
       <div class="abar"><div class="top"><b>Native rebuild</b><span>13 work · 5 replaced · 5 not available</span></div><div class="stack"><i class="ok" style="width:56.52%"></i><i class="sw" style="width:21.74%"></i><i class="ms" style="width:21.74%"></i></div><p class="miss">Not available: Nitro popups, Countdown Timer, Loopy, Sagepilot chat, Contentsquare.</p></div>
     </div>
 
     <div class="caveat" style="margin-top:26px">
       <div class="c-h">Our recommendation</div>
-      <p><b>Start with the wrapper app. Move to a native app later.</b> The wrapper is the only option that keeps your store exactly the same and is also on both app stores. If the app does well, we can build a native version later on the same store listing.</p>
+      <p><b>Go with the wrapper app.</b> It is the only option that is a proper app on both stores and keeps your store exactly the same. It is also the quickest and most efficient way to get there.</p>
       <a class="cta" href="#proposal" data-tab="proposal">See the proposal →</a>
     </div>
 
@@ -425,12 +515,13 @@
   <div class="wrap" id="proposal" data-part hidden>
     <div class="eyebrow">Part 2 · Proposal</div>
     <h1>Your Shopify store as an app on the <em>Play Store and App Store</em></h1>
-    <p class="body">We will turn tucokids.com into an app that customers can download from the Play Store and App Store. The app shows your website exactly as it is: the same products, quiz, reviews, rewards, videos and GoKwik checkout. Nothing changes in your Shopify setup, and your team keeps working the same way.</p>
+    <p class="body">We will turn tucokids.com into an app that customers can download from the Play Store and App Store. The app shows your website exactly as it is: the same products, quiz, reviews, rewards, videos and GoKwik checkout. Nothing changes in your Shopify setup, and your team keeps working the same way. It is a full app on both stores, built the most efficient way: around the website you already have.</p>
 
     <div class="meta-strip">
       <div class="ms"><div class="ms-l">Store</div><div class="ms-v">tucokids.com</div></div>
       <div class="ms"><div class="ms-l">Platform</div><div class="ms-v">Shopify</div></div>
-      <div class="ms"><div class="ms-l">Approach</div><div class="ms-v">Wrapper app (phase 1)</div></div>
+      <div class="ms"><div class="ms-l">Approach</div><div class="ms-v">Wrapper app</div></div>
+      <div class="ms"><div class="ms-l">Timeline</div><div class="ms-v">30 to 45 days</div></div>
       <div class="ms"><div class="ms-l">Date</div><div class="ms-v">2 Nov 2026</div></div>
     </div>
 
@@ -485,7 +576,7 @@
     <p class="body">Of the three options, the wrapper app is the only one that is on both app stores <b>and</b> keeps your store exactly the same.</p>
 
     <div class="matrix">
-      <div class="mx-row hd"><div></div><div>Installable website</div><div class="pick">Wrapper app</div><div>Native rebuild</div></div>
+      <div class="mx-row hd"><div></div><div>Web app</div><div class="pick">Wrapper app</div><div>Native rebuild</div></div>
       <div class="mx-row"><div class="lbl">On Play Store and App Store</div><div class="no">✕</div><div class="pick yes">✓</div><div class="yes">✓</div></div>
       <div class="mx-row"><div class="lbl">Exact copy of your store, all apps included</div><div class="yes">✓</div><div class="pick yes">✓</div><div class="no">✕ <small>rebuilt, some apps missing</small></div></div>
       <div class="mx-row"><div class="lbl">Notifications on iPhone and Android</div><div class="mid">Android only</div><div class="pick yes">✓</div><div class="yes">✓</div></div>
@@ -505,20 +596,30 @@
     </div>
 
     <h2>Your third-party apps</h2>
-    <p class="body">We checked every app your customers see on tucokids.com. <b>All 23 work in the app.</b> 20 of them, including Judge.me, Nector, Whatmore, Searchanise, KwikPass and ClickPost, need no changes. The 3 below need a small fix, which we do before launch.</p>
+    <p class="body"><b>All 23 apps your customers use on tucokids.com keep working in the app</b>, because the app loads your website. You keep the same apps, the same settings and the same app subscriptions.</p>
 
-    <div class="app-group">
-      <div class="ag-h"><h4>Need a small fix from us</h4><span class="chip fix">3 apps · fixed before launch</span></div>
-      <div class="fixrow"><div><b>GoKwik checkout</b><span class="job">One-click checkout, COD, UPI</span></div><p>When a customer pays by UPI, the app has to open GPay or PhonePe and then come back to the app. <em>We build this in and test it with real ₹1 orders before launch.</em></p></div>
-      <div class="fixrow"><div><b>Shopflo</b><span class="job">Fast checkout</span></div><p>Same UPI fix as GoKwik. <em>Built and tested the same way.</em></p></div>
-      <div class="fixrow"><div><b>CleverTap</b><span class="job">Notifications and journeys</span></div><p>Website notifications do not work in an app. <em>We add CleverTap's app add-on, so your team can send app notifications from the same CleverTap dashboard.</em></p></div>
+    <div class="apps-ok-box">
+      <div class="ag-h"><h4>Work as they are</h4><span class="chip ok">20 apps · nothing to do</span></div>
+      <div class="appchips">
+        <span>KwikPass</span><span>OTP login popup</span><span>Judge.me</span><span>Whatmore</span><span>Searchanise</span><span>StarApps Variant Images</span><span>Countdown Timer</span><span>Loopy</span><span>Nector</span><span>Nitro Commerce</span><span>KwikEngage</span><span>Sagepilot AI</span><span>ClickPost</span><span>Meta pixel</span><span>Google Analytics and Ads</span><span>Microsoft Clarity</span><span>Contentsquare</span><span>Intelligems</span><span>VWO</span><span>Shoplift</span>
+      </div>
     </div>
 
-
-    <div class="caveat" style="margin-top:14px">
-      <div class="c-h">If an app does not work properly</div>
-      <p><b>1. We test before launch.</b> We test every app in the app, on iPhone and Android.</p>
-      <p><b>2. Backup option.</b> If a page does not work properly, it can open in a browser window inside the app, where it works like the website.</p>
+    <div class="apps-two">
+      <div class="app-group">
+        <div class="ag-h"><h4>Set up by us</h4><span class="chip fix">3 apps · included in the build</span></div>
+        <div class="fixrow"><div><b>GoKwik checkout</b><span class="job">Checkout, COD, UPI</span></div><p>Checkout stays inside the app and works the same as today. <em>When a customer taps GPay or PhonePe, the app opens it, just like Chrome or Safari does on your website. This is a standard setting we include.</em></p></div>
+        <div class="fixrow"><div><b>Shopflo</b><span class="job">Checkout</span></div><p><em>Same as GoKwik.</em></p></div>
+        <div class="fixrow"><div><b>CleverTap</b><span class="job">Notifications</span></div><p><em>We add CleverTap's app add-on, so your team sends app notifications from the same dashboard.</em></p></div>
+      </div>
+      <div class="app-group">
+        <div class="ag-h"><h4>Good to know</h4></div>
+        <div class="mini">
+          <div><b>New apps show up automatically</b>Any app you add to Shopify later appears in the app too. No app update needed.</div>
+          <div><b>We test every app before launch</b>On iPhone and Android, inside the app.</div>
+          <div><b>Backup option</b>If a page does not work properly, it opens in a browser window inside the app, where it works like the website.</div>
+        </div>
+      </div>
     </div>
 
     <h2>Speed: what to expect</h2>
@@ -531,47 +632,54 @@
     <h2>Limitations and how we handle them</h2>
     <div class="cons">
       <div class="cn-row hd"><div>Limitation</div><div></div><div>How we handle it</div></div>
-      <div class="cn-row"><div class="con">Same speed as the mobile website<span>The app cannot be faster than the website pages</span></div><div class="arr">→</div><div class="fix">The tab bar and opening screen respond instantly, we turn off trackers that are not needed, and a native app can come later if speed becomes a priority.</div></div>
-      <div class="cn-row"><div class="con">Apple may reject the app the first time<span>Apple is strict with apps that load a website</span></div><div class="arr">→</div><div class="fix">We add the app features Apple expects (tab bar, notifications, offline screen, smart links), manage the review, and resubmit if needed.</div></div>
+      <div class="cn-row"><div class="con">Same speed as the mobile website<span>The app cannot be faster than the website pages</span></div><div class="arr">→</div><div class="fix">The tab bar and opening screen respond instantly, we turn off trackers that are not needed, and the app can be rebuilt natively in future if speed becomes the top priority.</div></div>
       <div class="cn-row"><div class="con">Trackers may count app visits as website visits</div><div class="arr">→</div><div class="fix">We tag all app visits, so Google Analytics and Meta show app orders separately.</div></div>
-      <div class="cn-row"><div class="con">Store accounts are needed in Tuco's name<span>Apple's company account needs a D-U-N-S number (a free company ID)</span></div><div class="arr">→</div><div class="fix">We help your team set up both accounts. We start this first because it takes the longest.</div></div>
     </div>
 
-    <h2>Process</h2>
+    <div class="acc-box">
+      <div class="c-h">Before we start · store accounts in Tuco's name</div>
+      <p>The app is published under <b>Tuco's own Apple and Google accounts</b>, so it stays yours. Tuco creates both accounts, pays the store fees directly, and adds our developer to them.</p>
+      <div class="fees">
+        <div class="fee"><span>Apple Developer</span><b>$99 a year</b><small>Paid to Apple. Needs a D-U-N-S number (a free company ID), which can take 1 to 2 weeks.</small></div>
+        <div class="fee"><span>Google Play Console</span><b>$25 one time</b><small>Paid to Google. Use a company account, not a personal one.</small></div>
+      </div>
+      <p>Already have these accounts? Then there is no new fee. These fees are separate from our commercials. We help your team set up both, and we start this first because it takes the longest.</p>
+    </div>
+
+    <h2>Timeline and process</h2>
+    <div class="gantt">
+      <div class="g-row g-hd"><div class="g-l"></div><div class="g-t"><span>Wk 1</span><span>Wk 2</span><span>Wk 3</span><span>Wk 4</span><span>Wk 5</span><span>Wk 6</span></div></div>
+      <div class="g-row"><div class="g-l">Plan and accounts</div><div class="g-t"><i style="grid-column:1/3"></i></div></div>
+      <div class="g-row"><div class="g-l">Build the app</div><div class="g-t"><i style="grid-column:2/4"></i></div></div>
+      <div class="g-row"><div class="g-l">Test</div><div class="g-t"><i style="grid-column:4/5"></i></div></div>
+      <div class="g-row"><div class="g-l">Submit to stores</div><div class="g-t"><i style="grid-column:5/6"></i></div></div>
+      <div class="g-row"><div class="g-l">Live on both stores</div><div class="g-t"><i class="live" style="grid-column:6/7"></i></div></div>
+      <div class="g-foot"><b>30 to 45 days</b> from kickoff to live on both stores, if both developer accounts are ready by the end of week 2.</div>
+    </div>
+
     <div class="steps">
-      <div class="step"><div class="step-n">01</div><div class="step-body"><h4>Plan and set up accounts</h4><div class="who"><span>Troopod</span><p>Finalise the tab bar, app name, icon and notifications. Help your team set up both developer accounts.</p><span>Tuco</span><p>Create Google Play and Apple developer accounts in Tuco's name (Apple needs a D-U-N-S number). Give us staff access to Checkout and Payments settings.</p></div></div></div>
-      <div class="step"><div class="step-n">02</div><div class="step-body"><h4>Build the app</h4><div class="who"><span>Troopod</span><p>Build the shell around tucokids.com: tab bar, opening and offline screens, CleverTap notifications, smart links, UPI payments and app order tracking.</p><span>Tuco</span><p>Tell us which trackers we can turn off in the app.</p></div></div></div>
-      <div class="step"><div class="step-n">03</div><div class="step-body"><h4>Test</h4><div class="who"><span>Troopod</span><p>Place real ₹1 orders with UPI, card and COD. Check login, rewards, reviews, the quiz and every app, and fix any issues.</p><span>Tuco</span><p>Test the app on your team's phones.</p></div></div></div>
-      <div class="step"><div class="step-n">04</div><div class="step-body"><h4>Submit to the app stores</h4><div class="who"><span>Troopod</span><p>Prepare the store listings, privacy policy and data forms. Manage the Google and Apple review.</p><span>Tuco</span><p>Approve the final store listing.</p></div></div></div>
-      <div class="step"><div class="step-n">05</div><div class="step-body"><h4>Launch and track</h4><div class="who"><span>Troopod</span><p>Add a "Get the app" banner to the website, send the launch notification, and share regular reports on installs, app orders and repeat orders.</p><span>Tuco</span><p>Share the launch on WhatsApp and CleverTap, add the QR code to pack inserts, and decide on an app-only offer.</p></div></div></div>
+      <div class="step"><div class="step-n">01</div><div class="step-body"><h4>Plan and set up accounts<span class="wk">Weeks 1 to 2</span></h4><div class="who"><span>Troopod</span><p>Finalise the tab bar, app name, icon and notifications. Help your team set up both developer accounts.</p><span>Tuco</span><p>Create Google Play ($25 one time) and Apple developer ($99 a year) accounts in Tuco's name, and add our developer to both. Apple needs a D-U-N-S number. Give us staff access to Checkout and Payments settings.</p></div></div></div>
+      <div class="step"><div class="step-n">02</div><div class="step-body"><h4>Build the app<span class="wk">Weeks 2 to 3</span></h4><div class="who"><span>Troopod</span><p>Build the shell around tucokids.com: tab bar, opening and offline screens, CleverTap notifications, smart links and app order tracking.</p><span>Tuco</span><p>Tell us which trackers we can turn off in the app.</p></div></div></div>
+      <div class="step"><div class="step-n">03</div><div class="step-body"><h4>Test<span class="wk">Week 4</span></h4><div class="who"><span>Troopod</span><p>Check checkout (UPI, card and COD), login, rewards, reviews, the quiz and every app, and fix any issues.</p><span>Tuco</span><p>Test the app on your team's phones.</p></div></div></div>
+      <div class="step"><div class="step-n">04</div><div class="step-body"><h4>Submit to the app stores<span class="wk">Week 5</span></h4><div class="who"><span>Troopod</span><p>Prepare the store listings, privacy policy and data forms. Manage the Google and Apple review.</p><span>Tuco</span><p>Approve the final store listing.</p></div></div></div>
+      <div class="step"><div class="step-n">05</div><div class="step-body"><h4>Launch<span class="wk">Weeks 5 to 6</span></h4><div class="who"><span>Troopod</span><p>Go live on both stores. Add a "Get the app" banner to the website and send the launch notification.</p><span>Tuco</span><p>Share the launch on WhatsApp and CleverTap, add the QR code to pack inserts, and decide on an app-only offer.</p></div></div></div>
     </div>
 
-    <h2>What comes next</h2>
-    <div class="approach">
-      <div class="a-card">
-        <div class="a-tag">Phase 01 · Now</div>
-        <div class="a-top"><div class="a-n">01</div><h4>Wrapper app</h4></div>
-        <div class="ph">
-          <span>When</span><p>Now, as the first step.</p>
-          <span>What it is</span><p>Your exact store on both app stores, with notifications.</p>
-          <span>What you get</span><p>Data on installs, orders and repeat orders.</p>
-          <span>Your effort</span><p>None. Your team keeps working in Shopify.</p>
+    <h2>Commercials</h2>
+    <div class="track">
+      <div class="track-h"><div class="t-name">App build and launch</div><div class="t-tag">One-time</div></div>
+      <div class="t-scope">Building, testing and publishing the Tuco Kids app on both stores, as described in this proposal.</div>
+      <div class="total">
+        <div><div class="t-big">₹4L</div><div class="t-sub">One-time, for both apps</div></div>
+        <div class="split">
+          <div class="sp"><span>Android app</span><b>₹2L</b><small>Published on Google Play</small></div>
+          <div class="plus">+</div>
+          <div class="sp"><span>iOS app</span><b>₹2L</b><small>Published on the App Store</small></div>
         </div>
       </div>
-      <div class="a-arrow">→</div>
-      <div class="a-card muted">
-        <div class="a-tag">Phase 02 · Later</div>
-        <div class="a-top"><div class="a-n">02</div><h4>Native app</h4></div>
-        <div class="ph">
-          <span>When</span><p>When app orders grow.</p>
-          <span>What it is</span><p>A fully native app built with Appbrew, for more speed.</p>
-          <span>What you get</span><p>A faster app. Customers just get an update.</p>
-          <span>Your effort</span><p>Custom sections like the quiz are rebuilt.</p>
-        </div>
-      </div>
+      <div class="note">Apple and Google store fees are separate and paid by Tuco directly (see "Before we start").</div>
     </div>
 
-    <div class="note"><b>Commercials</b> will be shared separately.</div>
 
     <div class="foot">
       <div><b>Troopod</b> · mobile app for Tuco Kids · troopod.io</div>
