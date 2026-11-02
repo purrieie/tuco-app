@@ -393,6 +393,13 @@
   .track:has(.total){padding:18px 20px;}
   .track:has(.total) .t-scope{margin-bottom:12px;}
   .track:has(.total) .note{margin-top:12px;padding:10px 14px;}
+  .next{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+  .nx{border:1px solid var(--border2);border-radius:12px;background:var(--bg2);padding:14px 16px;}
+  .nx span{display:block;font-family:'DM Mono',monospace;font-size:11px;color:var(--accent-lt);margin-bottom:6px;}
+  .nx p{font-size:13px;color:var(--text2);line-height:1.55;}
+  .nx p b{color:var(--text);font-weight:600;}
+  @media (max-width:720px){.next{grid-template-columns:1fr 1fr;}}
+  @media (max-width:420px){.next{grid-template-columns:1fr;}}
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     .a-card{transition:none;} .a-card:hover{transform:none;}
@@ -662,7 +669,7 @@
       <div class="step"><div class="step-n">02</div><div class="step-body"><h4>App build<span class="wk">Weeks 2 to 3</span></h4><div class="who"><span>Our side</span><p>Build the native shell around tucokids.com: tab bar, opening and offline screens, CleverTap notifications, smart links and app order tracking.</p><span>Tuco side</span><p>Confirm which trackers can be disabled in the app.</p></div></div></div>
       <div class="step"><div class="step-n">03</div><div class="step-body"><h4>Testing<span class="wk">Week 4</span></h4><div class="who"><span>Our side</span><p>Test checkout (UPI, card and COD), login, rewards, reviews, the quiz and every installed app, and resolve any issues.</p><span>Tuco side</span><p>Review the test build on team devices.</p></div></div></div>
       <div class="step"><div class="step-n">04</div><div class="step-body"><h4>Store submission<span class="wk">Week 5</span></h4><div class="who"><span>Our side</span><p>Prepare store listings, privacy policy and data forms, and manage the Google and Apple review.</p><span>Tuco side</span><p>Approve the final store listing.</p></div></div></div>
-      <div class="step"><div class="step-n">05</div><div class="step-body"><h4>Launch<span class="wk">Weeks 5 to 6</span></h4><div class="who"><span>Our side</span><p>Publish on both stores, add a "Get the app" banner to the website and send the launch notification.</p><span>Tuco side</span><p>Announce the launch on WhatsApp and CleverTap, add the QR code to pack inserts, and decide on any app-only offer.</p></div></div></div>
+      <div class="step"><div class="step-n">05</div><div class="step-body"><h4>Launch<span class="wk">Weeks 5 to 6</span></h4><div class="who"><span>Our side</span><p>Publish on both stores and add a "Get the app" banner to the website.</p><span>Tuco side</span><p>Announce the launch on WhatsApp and CleverTap, add the QR code to pack inserts, and decide on any app-only offer.</p></div></div></div>
     </div>
 
     <h2>Commercials</h2>
@@ -678,6 +685,14 @@
         </div>
       </div>
       <div class="note">Apple and Google store fees are separate and payable by Tuco directly (see Prerequisite).</div>
+    </div>
+
+    <h2>Next steps</h2>
+    <div class="next">
+      <div class="nx"><span>01</span><p><b>Approve</b> the scope and commercials.</p></div>
+      <div class="nx"><span>02</span><p><b>Confirm</b> whether Apple and Google developer accounts already exist.</p></div>
+      <div class="nx"><span>03</span><p><b>Set up</b> any missing accounts and add our developer.</p></div>
+      <div class="nx"><span>04</span><p><b>Kickoff call</b> to agree the app name, icon and tab bar. Week 1 begins.</p></div>
     </div>
 
 
